@@ -1,0 +1,21 @@
+# Healthcare FAQ Chatbot - Python Dependencies
+
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# CORS middleware
+python-dotenv==1.0.0
+
+# Google Gemini AI
+google-generativeai==0.3.2
+
+# HTTP requests for Scaledown API
+requests==2.31.0
+
+# Data validation
+pydantic==2.5.0
+
+# Additional utilities
+python-dateutil==2.8.2

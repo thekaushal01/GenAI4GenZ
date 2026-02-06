@@ -1,0 +1,422 @@
+{
+  "diseases": [
+    {
+      "id": "flu",
+      "name": "Influenza (Flu)",
+      "symptoms": [
+        "Sudden onset of fever (usually high, 100-104°F)",
+        "Severe body aches and muscle pain",
+        "Dry cough",
+        "Headache",
+        "Extreme fatigue and weakness",
+        "Sore throat",
+        "Nasal congestion",
+        "Chills and sweating"
+      ],
+      "causes": [
+        "Infection by influenza viruses (types A, B, C, and D)",
+        "Transmitted through respiratory droplets when infected people cough, sneeze, or talk",
+        "Can spread by touching contaminated surfaces then touching face",
+        "Seasonal variations affect transmission rates",
+        "Weakened immune system increases susceptibility"
+      ],
+      "treatments": [
+        "Rest and plenty of sleep to help immune system fight infection",
+        "Drink fluids to prevent dehydration (water, warm tea, soup)",
+        "Over-the-counter pain relievers for fever and aches",
+        "Antiviral medications if prescribed within 48 hours of symptom onset",
+        "Humidifiers to ease breathing and soothe airways",
+        "Avoid contact with others to prevent spread"
+      ],
+      "precautions": [
+        "Get annual flu vaccine, especially if in high-risk groups",
+        "Wash hands frequently with soap and water for at least 20 seconds",
+        "Avoid touching eyes, nose, and mouth",
+        "Cover coughs and sneezes with tissue or elbow",
+        "Clean and disinfect frequently touched surfaces",
+        "Avoid close contact with sick individuals",
+        "Stay home when sick to prevent spreading to others",
+        "Maintain good overall health through diet, exercise, and sleep"
+      ]
+    },
+    {
+      "id": "diabetes_type2",
+      "name": "Type 2 Diabetes",
+      "symptoms": [
+        "Increased thirst and frequent urination",
+        "Increased hunger, especially after eating",
+        "Unexplained weight loss",
+        "Fatigue and weakness",
+        "Blurred vision",
+        "Slow-healing sores or frequent infections",
+        "Darkened skin areas, especially in armpits and neck",
+        "Tingling or numbness in hands or feet"
+      ],
+      "causes": [
+        "Insulin resistance - cells don't respond properly to insulin",
+        "Pancreas cannot produce enough insulin to overcome resistance",
+        "Genetic predisposition and family history",
+        "Obesity and excess body fat, especially abdominal fat",
+        "Physical inactivity and sedentary lifestyle",
+        "Poor diet high in processed foods and sugars",
+        "Age - risk increases after 45",
+        "Polycystic ovary syndrome (PCOS) in women"
+      ],
+      "treatments": [
+        "Lifestyle modifications including diet changes and exercise",
+        "Blood sugar monitoring to track glucose levels",
+        "Oral medications to improve insulin sensitivity",
+        "Insulin therapy in some cases",
+        "Weight management through calorie control",
+        "Regular physical activity - at least 150 minutes per week",
+        "Stress management techniques",
+        "Regular medical checkups and HbA1c testing"
+      ],
+      "precautions": [
+        "Maintain healthy weight through balanced diet",
+        "Engage in regular physical activity",
+        "Eat high-fiber, low-glycemic foods",
+        "Limit refined carbohydrates and sugary beverages",
+        "Monitor blood pressure and cholesterol levels",
+        "Quit smoking if applicable",
+        "Get regular health screenings, especially if family history exists",
+        "Manage stress through meditation or yoga",
+        "Ensure adequate sleep (7-9 hours per night)"
+      ]
+    },
+    {
+      "id": "hypertension",
+      "name": "Hypertension (High Blood Pressure)",
+      "symptoms": [
+        "Often called 'silent killer' - many have no symptoms",
+        "Severe headaches",
+        "Fatigue or confusion",
+        "Vision problems",
+        "Chest pain",
+        "Difficulty breathing",
+        "Irregular heartbeat",
+        "Blood in urine",
+        "Pounding in chest, neck, or ears"
+      ],
+      "causes": [
+        "Primary hypertension - develops gradually with no identifiable cause",
+        "Secondary hypertension - caused by underlying conditions",
+        "Kidney disease or problems",
+        "Thyroid problems",
+        "Sleep apnea",
+        "Certain medications (birth control, decongestants)",
+        "Excessive salt intake",
+        "Lack of physical activity",
+        "Stress and anxiety",
+        "Obesity and being overweight",
+        "Smoking and tobacco use",
+        "Excessive alcohol consumption",
+        "Family history and genetics"
+      ],
+      "treatments": [
+        "Lifestyle changes as first-line approach",
+        "Medications including ACE inhibitors, beta-blockers, or diuretics",
+        "Reduce sodium intake to less than 2,300 mg per day",
+        "DASH diet (Dietary Approaches to Stop Hypertension)",
+        "Regular aerobic exercise",
+        "Weight loss if overweight",
+        "Limit alcohol consumption",
+        "Stress reduction techniques",
+        "Regular blood pressure monitoring at home",
+        "Medication compliance and regular doctor visits"
+      ],
+      "precautions": [
+        "Eat a heart-healthy diet rich in fruits, vegetables, whole grains",
+        "Reduce sodium in diet",
+        "Maintain healthy weight",
+        "Exercise regularly - at least 30 minutes most days",
+        "Limit alcohol to moderate amounts",
+        "Don't smoke or quit if you do",
+        "Manage stress through relaxation techniques",
+        "Get regular blood pressure checks",
+        "Take prescribed medications consistently",
+        "Limit caffeine intake",
+        "Get adequate sleep"
+      ]
+    },
+    {
+      "id": "asthma",
+      "name": "Asthma",
+      "symptoms": [
+        "Shortness of breath",
+        "Chest tightness or pain",
+        "Wheezing when exhaling (common sign in children)",
+        "Trouble sleeping due to shortness of breath or coughing",
+        "Coughing or wheezing attacks worsened by respiratory virus",
+        "Symptoms worsen with cold air or exercise",
+        "Rapid breathing",
+        "Frequent coughing, especially at night"
+      ],
+      "causes": [
+        "Airway inflammation and narrowing of bronchial tubes",
+        "Environmental allergens (pollen, dust mites, mold, pet dander)",
+        "Air pollutants and irritants (smoke, chemical fumes)",
+        "Respiratory infections",
+        "Physical activity (exercise-induced asthma)",
+        "Cold air",
+        "Stress and strong emotions",
+        "Certain medications (aspirin, beta-blockers)",
+        "Genetic predisposition",
+        "Gastroesophageal reflux disease (GERD)"
+      ],
+      "treatments": [
+        "Long-term control medications (inhaled corticosteroids)",
+        "Quick-relief rescue inhalers (bronchodilators)",
+        "Allergy medications if triggered by allergens",
+        "Biologics for severe asthma",
+        "Avoid known triggers",
+        "Use peak flow meter to monitor lung function",
+        "Follow asthma action plan",
+        "Breathing exercises",
+        "Regular medical checkups",
+        "Immunotherapy (allergy shots) for allergic asthma"
+      ],
+      "precautions": [
+        "Identify and avoid asthma triggers",
+        "Keep rescue inhaler accessible at all times",
+        "Monitor breathing with peak flow meter",
+        "Follow asthma action plan",
+        "Get vaccinated against flu and pneumonia",
+        "Use air purifiers to reduce indoor allergens",
+        "Keep home clean and free of dust",
+        "Avoid smoking and secondhand smoke",
+        "Manage stress and anxiety",
+        "Warm up before exercise",
+        "Cover nose and mouth in cold weather",
+        "Take medications as prescribed"
+      ]
+    },
+    {
+      "id": "migraine",
+      "name": "Migraine",
+      "symptoms": [
+        "Intense throbbing or pulsing pain, usually on one side of head",
+        "Nausea and vomiting",
+        "Sensitivity to light (photophobia)",
+        "Sensitivity to sound (phonophobia)",
+        "Visual disturbances (aura) - flashing lights, blind spots",
+        "Lightheadedness or fainting",
+        "Blurred vision",
+        "Pain that worsens with physical activity",
+        "Duration typically 4-72 hours if untreated"
+      ],
+      "causes": [
+        "Changes in brainstem and its interactions with trigeminal nerve",
+        "Imbalances in brain chemicals, including serotonin",
+        "Hormonal changes, especially in women (menstruation, pregnancy)",
+        "Certain foods (aged cheeses, processed meats, alcohol)",
+        "Food additives (MSG, artificial sweeteners)",
+        "Stress and anxiety",
+        "Sensory stimuli (bright lights, loud sounds, strong smells)",
+        "Sleep changes (too much or too little sleep)",
+        "Weather changes and barometric pressure",
+        "Certain medications",
+        "Caffeine (excess or withdrawal)",
+        "Genetic predisposition"
+      ],
+      "treatments": [
+        "Pain-relieving medications (NSAIDs, triptans)",
+        "Preventive medications for frequent migraines",
+        "Rest in dark, quiet room",
+        "Cold or warm compresses on head or neck",
+        "Caffeine in small amounts may help",
+        "Anti-nausea medications",
+        "CGRP inhibitors for prevention",
+        "Botox injections for chronic migraine",
+        "Cognitive behavioral therapy",
+        "Biofeedback and relaxation techniques",
+        "Acupuncture",
+        "Maintain consistent sleep schedule"
+      ],
+      "precautions": [
+        "Keep a headache diary to identify triggers",
+        "Maintain regular sleep schedule",
+        "Eat regular meals, don't skip",
+        "Stay hydrated",
+        "Manage stress through relaxation techniques",
+        "Exercise regularly but avoid sudden intense activity",
+        "Limit caffeine and alcohol",
+        "Avoid known food triggers",
+        "Use sunglasses in bright light",
+        "Maintain good posture",
+        "Take breaks from screens",
+        "Don't overuse pain medications (can cause rebound headaches)"
+      ]
+    },
+    {
+      "id": "anxiety",
+      "name": "Anxiety Disorders",
+      "symptoms": [
+        "Excessive worry or fear",
+        "Restlessness or feeling on edge",
+        "Fatigue and low energy",
+        "Difficulty concentrating",
+        "Irritability",
+        "Muscle tension",
+        "Sleep disturbances (difficulty falling or staying asleep)",
+        "Rapid heartbeat or palpitations",
+        "Sweating",
+        "Trembling or shaking",
+        "Shortness of breath",
+        "Gastrointestinal problems",
+        "Panic attacks in some cases"
+      ],
+      "causes": [
+        "Complex interaction of genetic, environmental, and psychological factors",
+        "Brain chemistry imbalances (neurotransmitters)",
+        "Traumatic life events or chronic stress",
+        "Family history of anxiety disorders",
+        "Certain personality traits (perfectionism, shyness)",
+        "Other mental health disorders (depression)",
+        "Medical conditions (heart disease, thyroid problems, diabetes)",
+        "Substance abuse or withdrawal",
+        "Chronic pain conditions",
+        "Childhood adversity or abuse"
+      ],
+      "treatments": [
+        "Cognitive Behavioral Therapy (CBT)",
+        "Exposure therapy for specific phobias",
+        "Anti-anxiety medications (benzodiazepines - short-term)",
+        "Antidepressants (SSRIs, SNRIs - long-term)",
+        "Mindfulness and meditation practices",
+        "Deep breathing exercises",
+        "Progressive muscle relaxation",
+        "Regular exercise and physical activity",
+        "Support groups",
+        "Lifestyle modifications",
+        "Limiting caffeine and alcohol",
+        "Adequate sleep hygiene"
+      ],
+      "precautions": [
+        "Practice stress management techniques daily",
+        "Maintain regular sleep schedule",
+        "Engage in regular physical activity",
+        "Limit caffeine, alcohol, and nicotine",
+        "Eat balanced, nutritious meals",
+        "Stay connected with supportive friends and family",
+        "Learn to identify and challenge negative thoughts",
+        "Practice relaxation techniques regularly",
+        "Set realistic goals and expectations",
+        "Take breaks and practice self-care",
+        "Avoid self-medication with alcohol or drugs",
+        "Seek professional help when symptoms interfere with daily life"
+      ]
+    },
+    {
+      "id": "covid19",
+      "name": "COVID-19 (Coronavirus Disease)",
+      "symptoms": [
+        "Fever or chills",
+        "Cough (usually dry)",
+        "Shortness of breath or difficulty breathing",
+        "Fatigue",
+        "Muscle or body aches",
+        "Headache",
+        "New loss of taste or smell",
+        "Sore throat",
+        "Congestion or runny nose",
+        "Nausea or vomiting",
+        "Diarrhea",
+        "Symptoms appear 2-14 days after exposure"
+      ],
+      "causes": [
+        "Infection with SARS-CoV-2 virus",
+        "Transmitted through respiratory droplets from infected person",
+        "Airborne transmission in enclosed spaces",
+        "Contact with contaminated surfaces (less common)",
+        "Close contact with infected individuals",
+        "Asymptomatic carriers can spread the virus",
+        "Variants of the virus may have different transmission rates"
+      ],
+      "treatments": [
+        "Most cases are mild and can be managed at home",
+        "Rest and isolation from others",
+        "Stay hydrated with plenty of fluids",
+        "Over-the-counter medications for fever and pain",
+        "Monitor oxygen levels with pulse oximeter if available",
+        "Antiviral medications (Paxlovid) for high-risk patients",
+        "Monoclonal antibodies in some cases",
+        "Supplemental oxygen for breathing difficulties",
+        "Hospitalization for severe cases",
+        "Seek emergency care if: trouble breathing, persistent chest pain, confusion, inability to stay awake, bluish lips/face"
+      ],
+      "precautions": [
+        "Get vaccinated and stay up-to-date with boosters",
+        "Wear masks in crowded indoor spaces",
+        "Maintain physical distancing (6 feet) when possible",
+        "Wash hands frequently for at least 20 seconds",
+        "Use hand sanitizer with at least 60% alcohol",
+        "Avoid touching face, especially eyes, nose, mouth",
+        "Improve ventilation in indoor spaces",
+        "Clean and disinfect frequently touched surfaces",
+        "Stay home when sick",
+        "Get tested if exposed or symptomatic",
+        "Follow local health guidelines",
+        "Avoid crowded, poorly ventilated spaces"
+      ]
+    },
+    {
+      "id": "arthritis",
+      "name": "Osteoarthritis",
+      "symptoms": [
+        "Joint pain during or after movement",
+        "Joint stiffness, especially in the morning or after inactivity",
+        "Tenderness when applying light pressure to joint",
+        "Loss of flexibility and range of motion",
+        "Grating sensation during joint movement",
+        "Bone spurs (extra bits of bone) around affected joint",
+        "Swelling in some cases",
+        "Symptoms worsen over time"
+      ],
+      "causes": [
+        "Breakdown of cartilage that cushions joints",
+        "Aging - wear and tear over time",
+        "Previous joint injuries",
+        "Repetitive stress on joints from occupation or sports",
+        "Obesity - excess weight puts stress on joints",
+        "Genetic predisposition",
+        "Bone deformities",
+        "Certain metabolic diseases (diabetes, hemochromatosis)",
+        "Gender - women more likely to develop osteoarthritis"
+      ],
+      "treatments": [
+        "Pain relievers and anti-inflammatory medications",
+        "Physical therapy to strengthen muscles around joints",
+        "Occupational therapy to modify daily activities",
+        "Weight loss to reduce stress on joints",
+        "Exercise - low-impact activities like swimming, walking",
+        "Hot and cold therapy",
+        "Assistive devices (canes, walkers, braces)",
+        "Corticosteroid injections for pain relief",
+        "Hyaluronic acid injections",
+        "Joint replacement surgery in severe cases",
+        "Alternative therapies: acupuncture, supplements (glucosamine, chondroitin)"
+      ],
+      "precautions": [
+        "Maintain healthy weight to reduce joint stress",
+        "Stay active with regular low-impact exercise",
+        "Protect joints from injury during activities",
+        "Use proper body mechanics when lifting or carrying",
+        "Strengthen muscles around joints",
+        "Maintain good posture",
+        "Avoid prolonged repetitive movements",
+        "Use assistive devices when needed",
+        "Wear supportive, cushioned shoes",
+        "Apply ice after activities to reduce inflammation",
+        "Pace activities and take regular breaks",
+        "Consider swimming or water aerobics for joint-friendly exercise"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-02-06",
+    "total_diseases": 8,
+    "disclaimer": "This information is for educational purposes only and should not be used for self-diagnosis or treatment. Always consult with a qualified healthcare professional for medical advice, diagnosis, or treatment."
+  }
+}
