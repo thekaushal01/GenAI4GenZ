@@ -117,109 +117,191 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Mobile Menu Animations */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .mobile-menu-enter {
+            animation: slideInRight 0.3s ease-out;
+        }
+        
+        .mobile-menu-overlay {
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        /* Hamburger Menu Animation */
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* Responsive Text Sizes */
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.125rem; }
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
     
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
                     </div>
-                    <span class="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">MediCare AI</span>
+                    <span class="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">MediCare AI</span>
                 </div>
                 
-                <!-- Nav Links -->
+                <!-- Desktop Nav Links -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">Features</a>
                     <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200">About</a>
                     <a href="../frontend/index.html" class="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-200">Try Chatbot</a>
                 </div>
                 
-                <!-- Theme Toggle -->
-                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <!-- Mobile Controls -->
+                <div class="flex items-center gap-2">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
-                </button>
+                    </button>
+                    
+                    <!-- Hamburger Menu Button (Mobile) -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200">
+                        <div class="w-6 h-5 flex flex-col justify-between">
+                            <span class="hamburger-line w-full h-0.5 bg-gray-600 dark:bg-gray-300 rounded-full"></span>
+                            <span class="hamburger-line w-full h-0.5 bg-gray-600 dark:bg-gray-300 rounded-full"></span>
+                            <span class="hamburger-line w-full h-0.5 bg-gray-600 dark:bg-gray-300 rounded-full"></span>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Menu</span>
+                <button onclick="toggleMobileMenu()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                    <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="#features" onclick="toggleMobileMenu()" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">Features</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">About</a>
+                <a href="../frontend/index.html" class="px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-200 text-center">Try Chatbot</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
         <!-- Background Elements -->
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating" style="animation-delay: 4s;"></div>
+            <div class="absolute -top-40 -right-40 w-60 h-60 sm:w-80 sm:h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating"></div>
+            <div class="absolute -bottom-40 -left-40 w-60 h-60 sm:w-80 sm:h-80 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating" style="animation-delay: 4s;"></div>
             
-            <!-- Floating Medical Icons -->
-            <div class="absolute top-20 left-10 text-4xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 0s;">💊</div>
-            <div class="absolute top-40 right-20 text-5xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 1s;">🩺</div>
-            <div class="absolute bottom-32 left-1/4 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 2s;">⚕️</div>
-            <div class="absolute bottom-20 right-1/3 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3s;">🏥</div>
-            <div class="absolute top-1/3 right-10 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 1.5s;">💉</div>
-            <div class="absolute top-2/3 left-16 text-5xl opacity-30 dark:opacity-20 medical-icon" style="animation-delay: 2.5s;">🧬</div>
-            <div class="absolute top-1/2 left-32 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.5s;">🩹</div>
-            <div class="absolute bottom-40 right-16 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4s;">🔬</div>
-            <div class="absolute top-24 right-1/3 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 0.5s;">🧪</div>
-            <div class="absolute bottom-24 left-20 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.5s;">🫀</div>
-            <div class="absolute top-1/2 right-16 text-5xl opacity-30 dark:opacity-20 medical-icon" style="animation-delay: 1.8s;">🩸</div>
-            <div class="absolute bottom-1/3 right-24 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.2s;">🧑‍⚕️</div>
-            <div class="absolute top-3/4 right-1/4 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 2.8s;">🧴</div>
-            <div class="absolute top-16 left-1/4 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 5s;">🌡️</div>
-            <div class="absolute bottom-16 left-1/3 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.2s;">💊</div>
+            <!-- Floating Medical Icons - Responsive Sizes and Positions -->
+            <div class="absolute top-20 left-4 sm:left-10 text-2xl sm:text-4xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 0s;">💊</div>
+            <div class="absolute top-32 sm:top-40 right-10 sm:right-20 text-3xl sm:text-5xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 1s;">🩺</div>
+            <div class="absolute bottom-24 sm:bottom-32 left-1/4 text-2xl sm:text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 2s;">⚕️</div>
+            <div class="hidden sm:block absolute bottom-20 right-1/3 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3s;">🏥</div>
+            <div class="absolute top-1/3 right-4 sm:right-10 text-2xl sm:text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 1.5s;">💉</div>
+            <div class="hidden md:block absolute top-2/3 left-16 text-5xl opacity-30 dark:opacity-20 medical-icon" style="animation-delay: 2.5s;">🧬</div>
+            <div class="hidden sm:block absolute top-1/2 left-32 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.5s;">🩹</div>
+            <div class="hidden lg:block absolute bottom-40 right-16 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4s;">🔬</div>
+            <div class="hidden md:block absolute top-24 right-1/3 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 0.5s;">🧪</div>
+            <div class="absolute bottom-16 sm:bottom-24 left-8 sm:left-20 text-2xl sm:text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.5s;">🫀</div>
+            <div class="hidden lg:block absolute top-1/2 right-16 text-5xl opacity-30 dark:opacity-20 medical-icon" style="animation-delay: 1.8s;">🩸</div>
+            <div class="hidden md:block absolute bottom-1/3 right-24 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.2s;">🧑‍⚕️</div>
+            <div class="hidden sm:block absolute top-3/4 right-1/4 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 2.8s;">🧴</div>
+            <div class="absolute top-12 sm:top-16 left-1/4 text-2xl sm:text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 5s;">🌡️</div>
+            <div class="hidden sm:block absolute bottom-16 left-1/3 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.2s;">💊</div>
         </div>
         
         <!-- Content -->
-        <div class="container mx-auto px-6 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 py-8 sm:py-0\">
             <div class="text-center">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight hero-title">
+                <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight hero-title px-2\">
                     <span class="text-gray-900 dark:text-white">MediCare AI</span>
-                    <span class="gradient-text block">Smart Medical Knowledge Assistant</span>
+                    <span class="gradient-text block mt-2">Smart Medical Knowledge Assistant</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto hero-subtitle">
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-3xl mx-auto hero-subtitle px-4\">
                     Advanced medical FAQ system that compresses symptom databases and treatment information, providing instant health answers with <strong>70% reduced token costs</strong> and higher accuracy through <strong>Scaledown API</strong> + RAG + Gemini 2.5 Flash.
                 </p>
                 
                 <!-- Animated Stats -->
-                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8 mb-12 hero-subtitle">
+                <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 hero-subtitle px-4">
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number">70%</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Token Savings</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number">70%</div>
+                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Token Savings</div>
                     </div>
-                    <div class="hidden sm:block w-px h-12 bg-gray-300 dark:bg-gray-600"></div>
+                    <div class="hidden sm:block w-px h-10 sm:h-12 bg-gray-300 dark:bg-gray-600"></div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.2s;">8+</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Medical Conditions</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.2s;">8+</div>
+                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Medical Conditions</div>
                     </div>
-                    <div class="hidden sm:block w-px h-12 bg-gray-300 dark:bg-gray-600"></div>
+                    <div class="hidden sm:block w-px h-10 sm:h-12 bg-gray-300 dark:bg-gray-600"></div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.4s;">24/7</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">AI Availability</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.4s;">24/7</div>
+                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">AI Availability</div>
                     </div>
-                    <div class="hidden sm:block w-px h-12 bg-gray-300 dark:bg-gray-600"></div>
+                    <div class="hidden sm:block w-px h-10 sm:h-12 bg-gray-300 dark:bg-gray-600"></div>
                     <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.6s;">&lt;1s</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Response Time</div>
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.6s;">&lt;1s</div>
+                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Response Time</div>
                     </div>
                 </div>
                 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-buttons">
-                    <a href="../frontend/index.html" class="px-8 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-2xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 glow inline-block">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 hero-buttons px-4">
+                    <a href="../frontend/index.html" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-accent text-white rounded-2xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 glow inline-block text-center">
                         Get Instant Answers
                     </a>
-                    <a href="#features" class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl font-semibold hover:border-primary dark:hover:border-primary hover:scale-105 transition-all duration-300 inline-block">
+                    <a href="#features" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-700 rounded-2xl font-semibold hover:border-primary dark:hover:border-primary hover:scale-105 transition-all duration-300 inline-block text-center">
                         Learn More
                     </a>
                 </div>
@@ -228,18 +310,18 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 px-6">
+    <section id="features" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            <div class="text-center mb-12 sm:mb-16 reveal">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-4\">
                     <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Scaledown</span> Powered Architecture
                 </h2>
-                <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                <p class="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4\">
                     Dual-layer compression system combining RAG retrieval with <strong>Scaledown API</strong> for optimal token efficiency and medical accuracy.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Feature Card 1 -->
                 <div class="reveal p-8 rounded-3xl glassmorphism hover:scale-105 transition-all duration-300 group cursor-pointer border border-gray-200 dark:border-gray-800">
                     <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
@@ -322,17 +404,17 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="py-20 px-6">
+    <section id="cta" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div class="container mx-auto">
-            <div class="reveal relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-accent p-1">
-                <div class="bg-white dark:bg-gray-900 rounded-3xl p-12 md:p-20 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <div class="reveal relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-primary to-accent p-1">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-20 text-center">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
                         Experience <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Scaledown</span>-Powered Healthcare AI
                     </h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                    <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                         See dual-layer compression in action: RAG retrieval + <strong>Scaledown API</strong> delivering <strong>70% cost savings</strong> with higher accuracy than traditional chatbots.
                     </p>
-                    <a href="../frontend/index.html" class="group relative inline-block px-8 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <a href="../frontend/index.html" class="group relative inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-accent text-white rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 overflow-hidden">
                         <span class="relative z-10">Get Instant Answers</span>
                         <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                     </a>
@@ -342,24 +424,24 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-gray-200 dark:border-gray-800">
+    <footer class="py-8 sm:py-12 px-4 sm:px-6 border-t border-gray-200 dark:border-gray-800">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
                 <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-lg">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-lg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
                     </div>
-                    <span class="font-bold">MediCare AI</span>
+                    <span class="font-bold text-sm sm:text-base">MediCare AI</span>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400">
+                <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm text-center">
                     &copy; 2026 MediCare AI. For educational purposes only.
                 </p>
-                <div class="flex items-center space-x-6">
-                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200">Privacy</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200">Terms</a>
-                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200">Contact</a>
+                <div class="flex items-center space-x-4 sm:space-x-6">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200 text-sm">Privacy</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200 text-sm">Terms</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200 text-sm">Contact</a>
                 </div>
             </div>
         </div>
@@ -367,5 +449,30 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const hamburgerBtn = document.getElementById('mobile-menu-btn');
+            
+            const isOpen = !mobileMenu.classList.contains('translate-x-full');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('hidden');
+                hamburgerBtn.classList.remove('hamburger-active');
+                document.body.style.overflow = '';
+            } else {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenuOverlay.classList.remove('hidden');
+                hamburgerBtn.classList.add('hamburger-active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Initialize mobile menu button
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+    </script>
 </body>
 </html>

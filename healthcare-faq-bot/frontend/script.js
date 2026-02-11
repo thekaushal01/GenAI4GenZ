@@ -61,6 +61,61 @@ function initializeTheme() {
     });
 }
 
+// ==================== MOBILE SIDEBAR ====================
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const isOpen = sidebar.classList.contains('sidebar-open');
+    
+    if (isOpen) {
+        // Close sidebar
+        sidebar.classList.remove('sidebar-open');
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
+        // Re-enable body scroll
+        document.body.style.overflow = '';
+    } else {
+        // Open sidebar
+        sidebar.classList.add('sidebar-open');
+        if (overlay) {
+            overlay.classList.add('active');
+        }
+        // Prevent body scroll when sidebar is open on mobile
+        if (window.innerWidth < 768) {
+            document.body.style.overflow = 'hidden';
+        }
+    }
+}
+
+// Close sidebar on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar && sidebar.classList.contains('sidebar-open')) {
+            toggleSidebar();
+        }
+    }
+});
+
+// Close sidebar when clicking overlay
+window.addEventListener('load', () => {
+    const overlay = document.getElementById('sidebar-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', toggleSidebar);
+    }
+});
+
+// Close sidebar when window is resized to desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar && sidebar.classList.contains('sidebar-open')) {
+            toggleSidebar();
+        }
+    }
+});
+
 // ==================== SESSION MANAGEMENT ====================
 function initializeSessions() {
     const savedSessions = localStorage.getItem('chatSessions');
@@ -503,10 +558,10 @@ function addMessage(content, role, meta = null, saveToHistory = true) {
 
     if (role === 'user') {
         messageDiv.innerHTML = `
-            <div class="flex justify-end items-end gap-2">
-                <div class="max-w-[75%] user-message text-white px-5 py-3 rounded-2xl rounded-tr-sm shadow-lg">
+            <div class="flex justify-end items-end gap-1.5 sm:gap-2">
+                <div class="max-w-[85%] sm:max-w-[80%] md:max-w-[75%] user-message text-white px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl rounded-tr-sm shadow-lg">
                     <p class="text-sm md:text-base leading-relaxed">${escapeHtml(content)}</p>
-                    <p class="message-time text-right mt-1">${timestamp}</p>
+                    <p class="message-time text-right mt-1 text-xs sm:text-[10px]">${timestamp}</p>
                 </div>
             </div>
         `;
@@ -524,14 +579,14 @@ function addMessage(content, role, meta = null, saveToHistory = true) {
         }
 
         messageDiv.innerHTML = `
-            <div class="flex justify-start items-end gap-2">
-                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-sm font-bold shadow-lg">
+            <div class="flex justify-start items-end gap-1.5 sm:gap-2">
+                <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg">
                     AI
                 </div>
-                <div class="max-w-[80%]">
-                    <div class="assistant-message text-gray-900 dark:text-white px-5 py-3 rounded-2xl rounded-tl-sm shadow-lg border border-gray-200 dark:border-gray-600">
+                <div class="max-w-[85%] sm:max-w-[85%] md:max-w-[80%]">
+                    <div class="assistant-message text-gray-900 dark:text-white px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl rounded-tl-sm shadow-lg border border-gray-200 dark:border-gray-600">
                         <div class="message-content text-sm md:text-base leading-relaxed"></div>
-                        <p class="message-time mt-2">${timestamp}</p>
+                        <p class="message-time mt-2 text-xs sm:text-[10px]">${timestamp}</p>
                     </div>
                     ${metaHtml}
                 </div>
