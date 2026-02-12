@@ -14,6 +14,35 @@
                         secondary: '#0369A1',
                         accent: '#059669',
                         medical: '#06B6D4',
+                    },
+                    fontSize: {
+                        'xs': '0.58725rem',
+                        'sm': '0.685125rem',
+                        'base': '0.783rem',
+                        'lg': '0.880875rem',
+                        'xl': '0.97875rem',
+                        '2xl': '1.1745rem',
+                        '3xl': '1.468125rem',
+                        '4xl': '1.76175rem',
+                        '5xl': '2.349rem',
+                        '6xl': '2.93625rem',
+                        '7xl': '3.5235rem',
+                    },
+                    spacing: {
+                        '0.5': '0.097875rem',
+                        '1': '0.19575rem',
+                        '1.5': '0.293625rem',
+                        '2': '0.3915rem',
+                        '2.5': '0.489375rem',
+                        '3': '0.58725rem',
+                        '4': '0.783rem',
+                        '5': '0.97875rem',
+                        '6': '1.1745rem',
+                        '8': '1.566rem',
+                        '10': '1.9575rem',
+                        '12': '2.349rem',
+                        '16': '3.132rem',
+                        '20': '3.915rem',
                     }
                 }
             }
@@ -22,7 +51,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Mobile Sidebar Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             #sidebar {
                 position: fixed;
                 top: 0;
@@ -52,6 +81,23 @@
                 pointer-events: all;
             }
         }
+        
+        /* Desktop Sidebar - Collapsible */
+        @media (min-width: 768px) {
+            #sidebar {
+                position: relative;
+                display: flex !important;
+                width: 320px;
+                transition: all 0.3s ease-in-out;
+            }
+            
+            #sidebar.sidebar-collapsed {
+                width: 0;
+                min-width: 0;
+                border-right-width: 0;
+                overflow: hidden;
+            }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-cyan-600 via-sky-700 to-teal-600 dark:from-gray-900 dark:via-blue-900 dark:to-gray-900 h-screen overflow-hidden transition-colors duration-300">
@@ -73,17 +119,24 @@
                             <span class="hidden sm:inline">Chat History</span>
                             <span class="sm:hidden">Chats</span>
                         </h2>
-                        <button id="sidebar-close-btn" class="md:hidden p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200" onclick="toggleSidebar()">
-                            <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                        </button>
+                        <div class="flex items-center gap-2">
+                            <button id="sidebar-collapse-btn" class="hidden md:block p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200" onclick="toggleSidebarCollapse()" title="Collapse Sidebar">
+                                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                            <button id="sidebar-close-btn" class="md:hidden p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200" onclick="toggleSidebar()">
+                                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                     <button id="new-chat-btn" class="w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl text-sm sm:text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                         </svg>
-                        New Chat
+                        <span>New Chat</span>
                     </button>
                 </div>
                 
@@ -94,7 +147,7 @@
                 
                 <!-- Sidebar Footer -->
                 <div class="p-3 sm:p-4 border-t border-gray-200/50 dark:border-gray-700/50">
-                    <a href="../landing-page/index.html" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200">
+                    <a href="../landing-page/index.html" class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200" title="Back to Home">
                         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
@@ -104,7 +157,7 @@
             </div>
 
             <!-- Main Chat Area -->
-            <div class="flex-1 flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
+            <div id="main-chat-area" class="flex-1 flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
                 
                 <!-- Enhanced Modern Navbar -->
                 <nav class="gradient-bg backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 border-b border-white/20 dark:border-gray-700/50 shadow-xl relative z-20 navbar-shimmer overflow-hidden">
@@ -138,6 +191,13 @@
                         <div class="flex items-center justify-between">
                             <!-- Left Section -->
                             <div class="flex items-center gap-2 sm:gap-4">
+                                <!-- Desktop Sidebar Expand Button (Shown when collapsed) -->
+                                <button id="sidebar-expand-btn" class="hidden p-2 rounded-xl bg-white/20 hover:bg-white/30 dark:bg-gray-800/50 dark:hover:bg-gray-700/50 transition-all duration-300 backdrop-blur-sm border border-white/30 dark:border-gray-600 shadow-lg" onclick="toggleSidebarCollapse()" title="Expand Sidebar">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                    </svg>
+                                </button>
+                                
                                 <!-- Mobile Sidebar Toggle -->
                                 <button onclick="toggleSidebar()" class="md:hidden p-2 rounded-xl bg-white/20 hover:bg-white/30 dark:bg-gray-800/50 dark:hover:bg-gray-700/50 transition-all duration-300 backdrop-blur-sm border border-white/30 dark:border-gray-600 shadow-lg">
                                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

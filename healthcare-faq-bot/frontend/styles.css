@@ -17,7 +17,7 @@
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: translateY(15.66px) scale(0.95);
     }
     to {
         opacity: 1;
@@ -35,7 +35,7 @@
         transform: translateY(0);
     }
     30% {
-        transform: translateY(-12px);
+        transform: translateY(-9.396px);
     }
 }
 
@@ -128,7 +128,7 @@
 /* Counter Number Animation */
 @keyframes count-up {
     from {
-        transform: translateY(10px);
+        transform: translateY(7.83px);
         opacity: 0;
     }
     to {
@@ -140,12 +140,12 @@
 /* Glow Pulse */
 @keyframes glow-pulse {
     0%, 100% {
-        box-shadow: 0 0 10px rgba(6, 182, 212, 0.3),
-                    0 0 20px rgba(6, 182, 212, 0.2);
+        box-shadow: 0 0 7.83px rgba(6, 182, 212, 0.3),
+                    0 0 15.66px rgba(6, 182, 212, 0.2);
     }
     50% {
-        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5),
-                    0 0 30px rgba(6, 182, 212, 0.3);
+        box-shadow: 0 0 15.66px rgba(6, 182, 212, 0.5),
+                    0 0 23.49px rgba(6, 182, 212, 0.3);
     }
 }
 
@@ -155,10 +155,10 @@
         transform: translate(0, 0) rotate(0deg);
     }
     33% {
-        transform: translate(10px, -10px) rotate(5deg);
+        transform: translate(7.83px, -7.83px) rotate(5deg);
     }
     66% {
-        transform: translate(-10px, 10px) rotate(-5deg);
+        transform: translate(-7.83px, 7.83px) rotate(-5deg);
     }
 }
 
@@ -176,7 +176,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-7.83px);
     }
 }
 
@@ -201,16 +201,16 @@
 /* Shimmer Effect */
 @keyframes shimmer {
     0% {
-        background-position: -1000px 0;
+        background-position: -783px 0;
     }
     100% {
-        background-position: 1000px 0;
+        background-position: 783px 0;
     }
 }
 
 .shimmer {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    background-size: 1000px 100%;
+    background-size: 783px 100%;
     animation: shimmer 2s infinite;
 }
 
@@ -221,7 +221,7 @@
         opacity: 0.7;
     }
     30% {
-        transform: translateY(-10px);
+        transform: translateY(-7.83px);
         opacity: 1;
     }
 }
@@ -229,17 +229,17 @@
 /* ==================== CUSTOM SCROLLBAR ==================== */
 
 .chat-scroll::-webkit-scrollbar {
-    width: 8px;
+    width: 6.264px;
 }
 
 .chat-scroll::-webkit-scrollbar-track {
     background: transparent;
-    border-radius: 10px;
+    border-radius: 7.83px;
 }
 
 .chat-scroll::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 7.83px;
     transition: background 0.3s ease;
 }
 
@@ -259,10 +259,20 @@
 
 #sidebar {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
 }
 
 #sidebar.sidebar-closed {
-    margin-left: -320px;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    #main-chat-area {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 /* Session Item Hover Effects */
@@ -289,21 +299,21 @@
 }
 
 .session-item:hover {
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    transform: translateX(3.132px);
+    box-shadow: 0 3.132px 9.396px rgba(102, 126, 234, 0.2);
 }
 
 /* ==================== MESSAGE BUBBLES ==================== */
 
 .user-message {
     background: linear-gradient(135deg, #0891B2 0%, #06B6D4 100%);
-    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3);
+    box-shadow: 0 3.132px 11.745px rgba(8, 145, 178, 0.3);
     transition: all 0.3s ease;
 }
 
 .user-message:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(8, 145, 178, 0.4);
+    transform: translateY(-1.566px);
+    box-shadow: 0 4.698px 15.66px rgba(8, 145, 178, 0.4);
 }
 
 .assistant-message {
@@ -318,17 +328,17 @@
 }
 
 .assistant-message:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1.566px);
+    box-shadow: 0 4.698px 15.66px rgba(0, 0, 0, 0.1);
 }
 
 .dark .assistant-message:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4.698px 15.66px rgba(0, 0, 0, 0.3);
 }
 
 /* Message Timestamp */
 .message-time {
-    font-size: 0.65rem;
+    font-size: 0.504rem;
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
@@ -349,7 +359,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 0.783px;
     background: linear-gradient(90deg, 
         transparent, 
         rgba(102, 126, 234, 0.5) 50%, 
@@ -360,14 +370,14 @@
 
 .chat-input {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 48px;
-    max-height: 150px;
+    min-height: 37.584px;
+    max-height: 117.45px;
 }
 
 .chat-input:focus {
-    box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15),
-                0 10px 25px rgba(8, 145, 178, 0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 0 0 2.349px rgba(8, 145, 178, 0.15),
+                0 7.83px 19.575px rgba(8, 145, 178, 0.1);
+    transform: translateY(-1.566px);
     border-color: #0891B2 !important;
 }
 
@@ -401,8 +411,8 @@
 
 /* Waveform Animation */
 @keyframes waveform {
-    0%, 100% { height: 16px; }
-    50% { height: 32px; }
+    0%, 100% { height: 12.528px; }
+    50% { height: 25.056px; }
 }
 
 .animate-waveform {
@@ -412,8 +422,8 @@
 /* Shake Animation */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+    25% { transform: translateX(-3.915px); }
+    75% { transform: translateX(3.915px); }
 }
 
 /* Scale In Animation */
@@ -450,29 +460,29 @@
 
 /* Attached Files */
 #attached-files .file-preview {
-    padding: 8px 12px;
+    padding: 6.264px 9.396px;
     background: linear-gradient(135deg, #0891B2 0%, #059669 100%);
-    border-radius: 12px;
+    border-radius: 9.396px;
     color: white;
-    font-size: 13px;
+    font-size: 11.31px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6.264px;
     animation: slideDown 0.3s ease;
 }
 
 #attached-files .file-preview:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+    box-shadow: 0 3.132px 9.396px rgba(8, 145, 178, 0.3);
 }
 
 /* Smart Suggestions */
 #smart-suggestions .suggestion-item {
-    padding: 8px 16px;
+    padding: 6.264px 12.528px;
     background: white;
-    border: 2px solid #e5e7eb;
-    border-radius: 20px;
-    font-size: 14px;
+    border: 1.566px solid #e5e7eb;
+    border-radius: 15.66px;
+    font-size: 12.18px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -481,20 +491,20 @@
     background: linear-gradient(135deg, #0891B2 0%, #059669 100%);
     color: white;
     border-color: #0891B2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+    transform: translateY(-1.566px);
+    box-shadow: 0 3.132px 9.396px rgba(8, 145, 178, 0.3);
 }
 
 /* Emoji Picker */
 #emoji-picker .emoji-item {
-    width: 40px;
-    height: 40px;
+    width: 31.32px;
+    height: 31.32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 18.792px;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 6.264px;
     transition: all 0.2s ease;
 }
 
@@ -533,8 +543,8 @@
 }
 
 .quick-action-btn:hover::after {
-    width: 300px;
-    height: 300px;
+    width: 261px;
+    height: 261px;
 }
 
 /* ==================== SUGGESTED PROMPTS ==================== */
@@ -561,7 +571,7 @@
 .suggested-prompt:hover::before {
     width: 100%;
     height: 100%;
-    border-radius: 9999px;
+    border-radius: 15.66px;
 }
 
 /* ==================== TYPING INDICATOR ==================== */
@@ -569,11 +579,11 @@
 .typing-indicator {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 12px 20px;
+    gap: 3.132px;
+    padding: 9.396px 15.66px;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15.66px;
+    box-shadow: 0 1.566px 7.83px rgba(0, 0, 0, 0.1);
 }
 
 .dark .typing-indicator {
@@ -581,8 +591,8 @@
 }
 
 .typing-dot {
-    width: 8px;
-    height: 8px;
+    width: 6.264px;
+    height: 6.264px;
     border-radius: 50%;
     background: #0891B2;
     animation: typing 1.4s infinite;
@@ -605,16 +615,24 @@
         left: 0;
         height: 100vh;
         z-index: 50;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 1.566px 0 7.83px rgba(0, 0, 0, 0.1);
+        width: 20rem !important;
     }
     
     #sidebar.sidebar-closed {
         transform: translateX(-100%);
-        margin-left: 0;
+        width: 20rem !important;
+        min-width: 20rem !important;
+        max-width: 85vw !important;
     }
     
     .quick-action-btn {
-        padding: 0.75rem;
+        padding: 0.58725rem;
+    }
+}
+    
+    .quick-action-btn {
+        padding: 0.58725rem;
     }
 }
 
@@ -691,7 +709,7 @@ nav button:hover::before {
         box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
     }
     50% {
-        box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+        box-shadow: 0 0 0 7.83px rgba(102, 126, 234, 0);
     }
 }
 
@@ -745,10 +763,10 @@ nav svg {
 /* Badge glow effect */
 @keyframes badge-glow {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+        box-shadow: 0 0 3.915px rgba(102, 126, 234, 0.5);
     }
     50% {
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.6);
+        box-shadow: 0 0 15.66px rgba(102, 126, 234, 0.8), 0 0 23.49px rgba(102, 126, 234, 0.6);
     }
 }
 
@@ -765,7 +783,7 @@ nav .bg-white\/10:hover {
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-7.83px);
     }
     to {
         opacity: 1;
@@ -794,6 +812,6 @@ nav .bg-white\/10:hover {
 }
 
 *:focus-visible {
-    outline: 2px solid #0891B2;
-    outline-offset: 2px;
+    outline: 1.566px solid #0891B2;
+    outline-offset: 1.566px;
 }

@@ -98,20 +98,72 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Close sidebar when clicking overlay
-window.addEventListener('load', () => {
-    const overlay = document.getElementById('sidebar-overlay');
-    if (overlay) {
-        overlay.addEventListener('click', toggleSidebar);
-    }
-});
-
 // Close sidebar when window is resized to desktop
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 768) {
         const sidebar = document.getElementById('sidebar');
         if (sidebar && sidebar.classList.contains('sidebar-open')) {
             toggleSidebar();
+        }
+    }
+});
+
+// ==================== DESKTOP SIDEBAR COLLAPSE ====================
+function toggleSidebarCollapse() {
+    const sidebar = document.getElementById('sidebar');
+    const collapseBtn = document.getElementById('sidebar-collapse-btn');
+    const expandBtn = document.getElementById('sidebar-expand-btn');
+    const isCollapsed = sidebar.classList.contains('sidebar-closed');
+    
+    if (isCollapsed) {
+        // Expand sidebar
+        sidebar.classList.remove('sidebar-closed');
+        if (expandBtn) {
+            expandBtn.classList.add('hidden');
+            expandBtn.classList.remove('md:block');
+        }
+        if (collapseBtn) {
+            collapseBtn.classList.remove('hidden');
+        }
+    } else {
+        // Collapse sidebar completely
+        sidebar.classList.add('sidebar-closed');
+        if (expandBtn) {
+            expandBtn.classList.remove('hidden');
+            expandBtn.classList.add('md:block');
+        }
+        if (collapseBtn) {
+            collapseBtn.classList.add('hidden');
+        }
+    }
+    
+    // Save collapse state
+    localStorage.setItem('sidebar-collapsed', isCollapsed ? 'false' : 'true');
+}
+
+// Restore sidebar collapse state on load
+window.addEventListener('load', () => {
+    // Set up overlay click handler
+    const overlay = document.getElementById('sidebar-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', toggleSidebar);
+    }
+    
+    // Restore collapse state for desktop
+    const isCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+    if (isCollapsed && window.innerWidth >= 768) {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.classList.add('sidebar-closed');
+            const expandBtn = document.getElementById('sidebar-expand-btn');
+            const collapseBtn = document.getElementById('sidebar-collapse-btn');
+            if (expandBtn) {
+                expandBtn.classList.remove('hidden');
+                expandBtn.classList.add('md:block');
+            }
+            if (collapseBtn) {
+                collapseBtn.classList.add('hidden');
+            }
         }
     }
 });
