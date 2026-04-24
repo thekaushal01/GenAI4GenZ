@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediCare AI - Powered by Scaledown Compression Technology</title>
+    <title>MediCare - Powered by Scaledown Compression Technology</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -49,152 +49,7 @@
             }
         }
     </script>
-    <style>
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .gradient-text {
-            background: linear-gradient(270deg, #0891B2, #0369A1, #059669, #06B6D4);
-            background-size: 600% 600%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient 8s ease infinite;
-            padding-bottom: 0.1em;
-            line-height: 1.2;
-        }
-        
-        .glow {
-            box-shadow: 0 0 60px rgba(8, 145, 178, 0.4);
-        }
-        
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes pulse-scale {
-            0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        @keyframes slide-up {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float-slow {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(10px, -10px) rotate(5deg); }
-            66% { transform: translate(-10px, 10px) rotate(-5deg); }
-        }
-        
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            10% { transform: scale(1.2); }
-            20% { transform: scale(1); }
-            30% { transform: scale(1.2); }
-            40% { transform: scale(1); }
-        }
-        
-        .medical-icon {
-            animation: float-slow 8s ease-in-out infinite;
-        }
-        
-        .stat-number {
-            animation: slide-up 0.8s ease-out;
-        }
-        
-        .hero-title {
-            animation: slide-up 1s ease-out;
-        }
-        
-        .hero-subtitle {
-            animation: slide-up 1.2s ease-out;
-        }
-        
-        .hero-buttons {
-            animation: slide-up 1.4s ease-out;
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Mobile Menu Animations */
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .mobile-menu-enter {
-            animation: slideInRight 0.3s ease-out;
-        }
-        
-        .mobile-menu-overlay {
-            animation: fadeIn 0.3s ease-out;
-        }
-        
-        /* Hamburger Menu Animation */
-        .hamburger-line {
-            transition: all 0.3s ease;
-        }
-        
-        .hamburger-active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-        
-        .hamburger-active .hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger-active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-        
-        /* Responsive Text Sizes */
-        @media (max-width: 640px) {
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.125rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
     
@@ -204,12 +59,13 @@
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 border border-primary/25 rounded-xl flex items-center justify-center shadow-sm">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8M8 12h8"></path>
                         </svg>
                     </div>
-                    <span class="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">MediCare AI</span>
+                    <span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white tracking-wide">MediCare</span>
                 </div>
                 
                 <!-- Desktop Nav Links -->
@@ -274,29 +130,41 @@
             <div class="absolute -bottom-40 -left-40 w-60 h-60 sm:w-80 sm:h-80 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating" style="animation-delay: 2s;"></div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 floating" style="animation-delay: 4s;"></div>
             
-            <!-- Floating Medical Icons - Responsive Sizes and Positions -->
-            <div class="absolute top-20 left-4 sm:left-10 text-2xl sm:text-4xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 0s;">💊</div>
-            <div class="absolute top-32 sm:top-40 right-10 sm:right-20 text-3xl sm:text-5xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 1s;">🩺</div>
-            <div class="absolute bottom-24 sm:bottom-32 left-1/4 text-2xl sm:text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 2s;">⚕️</div>
-            <div class="hidden sm:block absolute bottom-20 right-1/3 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3s;">🏥</div>
-            <div class="absolute top-1/3 right-4 sm:right-10 text-2xl sm:text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 1.5s;">💉</div>
-            <div class="hidden md:block absolute top-2/3 left-16 text-5xl opacity-30 dark:opacity-20 medical-icon" style="animation-delay: 2.5s;">🧬</div>
-            <div class="hidden sm:block absolute top-1/2 left-32 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.5s;">🩹</div>
-            <div class="hidden lg:block absolute bottom-40 right-16 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4s;">🔬</div>
-            <div class="hidden md:block absolute top-24 right-1/3 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 0.5s;">🧪</div>
-            <div class="absolute bottom-16 sm:bottom-24 left-8 sm:left-20 text-2xl sm:text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.5s;">🫀</div>
-            <div class="hidden lg:block absolute top-1/2 right-16 text-5xl opacity-30 dark:opacity-20 medical-icon" style="animation-delay: 1.8s;">🩸</div>
-            <div class="hidden md:block absolute bottom-1/3 right-24 text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.2s;">🧑‍⚕️</div>
-            <div class="hidden sm:block absolute top-3/4 right-1/4 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 2.8s;">🧴</div>
-            <div class="absolute top-12 sm:top-16 left-1/4 text-2xl sm:text-4xl opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 5s;">🌡️</div>
-            <div class="hidden sm:block absolute bottom-16 left-1/3 text-3xl opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.2s;">💊</div>
+            <!-- Floating Medical Marks - Responsive Sizes and Positions -->
+            <div class="absolute top-20 left-4 sm:left-10 w-4 h-4 sm:w-6 sm:h-6 opacity-40 dark:opacity-30 medical-icon border border-primary/60 rounded-full" style="animation-delay: 0s;"></div>
+            <div class="absolute top-32 sm:top-40 right-10 sm:right-20 w-5 h-5 sm:w-7 sm:h-7 opacity-35 dark:opacity-25 medical-icon border-2 border-secondary/60 rounded-full" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-24 sm:bottom-32 left-1/4 w-4 h-4 sm:w-5 sm:h-5 opacity-40 dark:opacity-30 medical-icon bg-accent/30 rounded-full" style="animation-delay: 2s;"></div>
+            <div class="hidden sm:block absolute bottom-20 right-1/3 w-6 h-6 opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3s;">
+                <svg class="w-full h-full text-primary/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
+            </div>
+            <div class="absolute top-1/3 right-4 sm:right-10 w-5 h-5 sm:w-6 sm:h-6 opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 1.5s;">
+                <svg class="w-full h-full text-accent/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5l2.5 4.5L19 12l-4.5 2.5L12 19l-2.5-4.5L5 12l4.5-2.5L12 5z"/></svg>
+            </div>
+            <div class="hidden md:block absolute top-2/3 left-16 w-7 h-7 opacity-30 dark:opacity-20 medical-icon border border-medical/60 rounded-full" style="animation-delay: 2.5s;"></div>
+            <div class="hidden sm:block absolute top-1/2 left-32 w-6 h-6 opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.5s;">
+                <svg class="w-full h-full text-secondary/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10M12 7v10"/></svg>
+            </div>
+            <div class="hidden lg:block absolute bottom-40 right-16 w-5 h-5 opacity-40 dark:opacity-30 medical-icon bg-primary/30 rounded-full" style="animation-delay: 4s;"></div>
+            <div class="hidden md:block absolute top-24 right-1/3 w-6 h-6 opacity-35 dark:opacity-25 medical-icon border border-accent/60 rounded-full" style="animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-16 sm:bottom-24 left-8 sm:left-20 w-5 h-5 sm:w-6 sm:h-6 opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.5s;">
+                <svg class="w-full h-full text-medical/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16M4 12h16"/></svg>
+            </div>
+            <div class="hidden lg:block absolute top-1/2 right-16 w-7 h-7 opacity-30 dark:opacity-20 medical-icon border-2 border-secondary/50 rounded-full" style="animation-delay: 1.8s;"></div>
+            <div class="hidden md:block absolute bottom-1/3 right-24 w-6 h-6 opacity-35 dark:opacity-25 medical-icon" style="animation-delay: 3.2s;">
+                <svg class="w-full h-full text-primary/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <div class="hidden sm:block absolute top-3/4 right-1/4 w-5 h-5 opacity-40 dark:opacity-30 medical-icon bg-accent/30 rounded-full" style="animation-delay: 2.8s;"></div>
+            <div class="absolute top-12 sm:top-16 left-1/4 w-5 h-5 sm:w-6 sm:h-6 opacity-35 dark:opacity-25 medical-icon border border-primary/60 rounded-full" style="animation-delay: 5s;"></div>
+            <div class="hidden sm:block absolute bottom-16 left-1/3 w-5 h-5 opacity-40 dark:opacity-30 medical-icon" style="animation-delay: 4.2s;">
+                <svg class="w-full h-full text-accent/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"/></svg>
+            </div>
         </div>
         
         <!-- Content -->
         <div class="container mx-auto px-4 sm:px-6 relative z-10 py-8 sm:py-0\">
             <div class="text-center">
                 <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight hero-title px-2\">
-                    <span class="text-gray-900 dark:text-white">MediCare AI</span>
+                    <span class="text-gray-900 dark:text-white">MediCare</span>
                     <span class="gradient-text block mt-2">Smart Medical Knowledge Assistant</span>
                 </h1>
                 <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-3xl mx-auto hero-subtitle px-4\">
@@ -317,7 +185,7 @@
                     <div class="hidden sm:block w-px h-10 sm:h-12 bg-gray-300 dark:bg-gray-600"></div>
                     <div class="text-center">
                         <div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent stat-number" style="animation-delay: 0.4s;">24/7</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">AI Availability</div>
+                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Care Availability</div>
                     </div>
                     <div class="hidden sm:block w-px h-10 sm:h-12 bg-gray-300 dark:bg-gray-600"></div>
                     <div class="text-center">
@@ -438,7 +306,7 @@
             <div class="reveal relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-primary to-accent p-1">
                 <div class="bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-20 text-center">
                     <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
-                        Experience <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Scaledown</span>-Powered Healthcare AI
+                        Experience <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Scaledown</span>-Powered Healthcare Assistant
                     </h2>
                     <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                         See dual-layer compression in action: RAG retrieval + <strong>Scaledown API</strong> delivering <strong>70% cost savings</strong> with higher accuracy than traditional chatbots.
@@ -457,15 +325,16 @@
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
                 <div class="flex items-center space-x-2">
-                    <div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-lg">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 bg-primary/10 border border-primary/25 rounded-lg flex items-center justify-center shadow-sm">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8M8 12h8"></path>
                         </svg>
                     </div>
-                    <span class="font-bold text-sm sm:text-base">MediCare AI</span>
+                    <span class="font-bold text-sm sm:text-base">MediCare</span>
                 </div>
                 <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm text-center">
-                    &copy; 2026 MediCare AI. For educational purposes only.
+                    &copy; 2026 MediCare. For educational purposes only.
                 </p>
                 <div class="flex items-center space-x-4 sm:space-x-6">
                     <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-200 text-sm">Privacy</a>
