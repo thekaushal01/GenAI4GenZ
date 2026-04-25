@@ -1,0 +1,144 @@
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+    background: linear-gradient(270deg, #0891B2, #0369A1, #059669, #06B6D4);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 8s ease infinite;
+    padding-bottom: 0.1em;
+    line-height: 1.2;
+}
+
+.glow {
+    box-shadow: 0 0 60px rgba(8, 145, 178, 0.4);
+}
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-scale {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(10px, -10px) rotate(5deg); }
+    66% { transform: translate(-10px, 10px) rotate(-5deg); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.2); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+}
+
+.medical-icon {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.stat-number {
+    animation: slide-up 0.8s ease-out;
+}
+
+.hero-title {
+    animation: slide-up 1s ease-out;
+}
+
+.hero-subtitle {
+    animation: slide-up 1.2s ease-out;
+}
+
+.hero-buttons {
+    animation: slide-up 1.4s ease-out;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Menu Animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.mobile-menu-enter {
+    animation: slideInRight 0.3s ease-out;
+}
+
+.mobile-menu-overlay {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Hamburger Menu Animation */
+.hamburger-line {
+    transition: all 0.3s ease;
+}
+
+.hamburger-active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 640px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.125rem; }
+}
