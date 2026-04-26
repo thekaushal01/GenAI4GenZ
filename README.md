@@ -68,8 +68,6 @@ Open frontend:
 - `healthcare-faq-bot/landing-page/index.html`
 - or `healthcare-faq-bot/frontend/index.html`
 
-```
-
 ## Project Structure
 
 ```text

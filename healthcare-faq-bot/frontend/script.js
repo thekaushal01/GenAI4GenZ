@@ -13,13 +13,13 @@ tailwind.config = {
     }
 };
 
-// ==================== GLOBAL STATE ====================
+// GLOBAL STATE 
 const API_BASE_URL = 'http://localhost:8000';
 let currentSessionId = null;
 let chatSessions = [];
 let isRecording = false;
 
-// ==================== INITIALIZATION ====================
+// INITIALIZATION 
 document.addEventListener('DOMContentLoaded', () => {
     initializeTheme();
     initializeSessions();
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkHealth();
 });
 
-// ==================== THEME MANAGEMENT ====================
+// THEME MANAGEMENT 
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -61,7 +61,7 @@ function initializeTheme() {
     });
 }
 
-// ==================== MOBILE SIDEBAR ====================
+// MOBILE SIDEBAR
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebar-overlay');
@@ -108,7 +108,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-// ==================== DESKTOP SIDEBAR COLLAPSE ====================
+// DESKTOP SIDEBAR COLLAPSE 
 function toggleSidebarCollapse() {
     const sidebar = document.getElementById('sidebar');
     const collapseBtn = document.getElementById('sidebar-collapse-btn');
@@ -168,7 +168,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// ==================== SESSION MANAGEMENT ====================
+// SESSION MANAGEMENT 
 function initializeSessions() {
     const savedSessions = localStorage.getItem('chatSessions');
     if (savedSessions) {
@@ -372,7 +372,7 @@ function formatSessionTime(dateString) {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-// ==================== EVENT LISTENERS ====================
+// EVENT LISTENERS 
 function initializeEventListeners() {
     // New Chat Button
     document.getElementById('new-chat-btn').addEventListener('click', createNewSession);
@@ -472,25 +472,17 @@ function initializeEventListeners() {
     
     // Global keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-        // Escape key closes modals
+        // Escape key closes sidebar
         if (e.key === 'Escape') {
-            closeEmojiPicker();
-            const toolbar = document.getElementById('formatting-toolbar');
-            if (toolbar.classList.contains('show')) {
-                toolbar.classList.remove('show');
-                toolbar.classList.add('hidden');
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar && sidebar.classList.contains('sidebar-open')) {
+                toggleSidebar();
             }
-        }
-        
-        // Ctrl/Cmd + / toggles formatting toolbar
-        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
-            e.preventDefault();
-            toggleFormattingToolbar();
         }
     });
 }
 
-// ==================== VOICE RECORDING ====================
+// VOICE RECORDING 
 function toggleVoiceRecording() {
     const voiceBtn = document.getElementById('voice-btn');
     const recordingIndicator = document.getElementById('recording-indicator');
@@ -514,7 +506,7 @@ function toggleVoiceRecording() {
     }
 }
 
-// ==================== CHAT FUNCTIONALITY ====================
+// CHAT FUNCTIONALITY 
 async function sendMessage() {
     const input = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
@@ -594,7 +586,7 @@ function askQuestion(question) {
     sendMessage();
 }
 
-// ==================== MESSAGE HANDLING ====================
+// MESSAGE HANDLING
 function addMessage(content, role, meta = null, saveToHistory = true) {
     const chatContainer = document.getElementById('chat-container');
     const timestamp = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
@@ -633,7 +625,7 @@ function addMessage(content, role, meta = null, saveToHistory = true) {
         messageDiv.innerHTML = `
             <div class="flex justify-start items-end gap-1.5 sm:gap-2">
                 <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg">
-                    AI
+                    MC
                 </div>
                 <div class="max-w-[85%] sm:max-w-[85%] md:max-w-[80%]">
                     <div class="assistant-message text-gray-900 dark:text-white px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl rounded-tl-sm shadow-lg border border-gray-200 dark:border-gray-600">
@@ -751,7 +743,7 @@ function showTypingIndicator() {
     indicator.innerHTML = `
         <div class="flex justify-start items-end gap-2">
             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-sm font-bold shadow-lg animate-pulse">
-                AI
+                MC
             </div>
             <div class="bg-white dark:bg-gray-700 px-6 py-4 rounded-2xl rounded-tl-sm shadow-lg border border-gray-200 dark:border-gray-600 flex items-center gap-3">
                 <span class="thinking-pulse text-2xl">🤔</span>
@@ -775,7 +767,7 @@ function hideTypingIndicator() {
     }
 }
 
-// ==================== QUICK REPLIES ====================
+// QUICK REPLIES 
 function showQuickReplies(diseases) {
     const quickRepliesContainer = document.getElementById('quick-replies');
     
@@ -800,7 +792,7 @@ function showQuickReplies(diseases) {
     quickRepliesContainer.classList.remove('hidden');
 }
 
-// ==================== UTILITY FUNCTIONS ====================
+// UTILITY FUNCTIONS
 function escapeHtml(text) {
     const map = {
         '&': '&amp;',
@@ -817,7 +809,7 @@ function clearChatContainer() {
     chatContainer.innerHTML = `
         <div class="welcome-container text-center max-w-3xl mx-auto flex flex-col justify-center items-center min-h-full">
             <div class="text-7xl mb-6 animate-bounce-slow inline-block">👋</div>
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">Welcome to MediCare AI!</h2>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">Welcome to MediCare!</h2>
             <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-lg animate-fade-in">
                 Your trusted healthcare companion, available 24/7. Ask me about medical conditions,
                 symptoms, treatments, preventive care, or general wellness guidance.
@@ -869,7 +861,7 @@ function clearChatContainer() {
     `;
 }
 
-// ==================== SERVER HEALTH CHECK ====================
+// SERVER HEALTH CHECK
 async function checkHealth() {
     try {
         const response = await fetch(`${API_BASE_URL}/health`);
@@ -878,101 +870,9 @@ async function checkHealth() {
         // Server not running
     }
 }
-// ==================== EMOJI PICKER ====================
-const emojiCategories = {
-    'Smileys': ['😀', '😃', '😄', '😁', '😅', '😂', '🤣', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😝', '😜', '🤪', '🤨', '🧐', '🤓', '😎', '🤩', '🥳'],
-    'Health': ['🏥', '⚕️', '💊', '💉', '🩺', '🩹', '🩼', '🦷', '🧬', '🔬', '🧪', '🧫', '🩻', '❤️', '🫀', '🫁', '🧠', '👁️', '🦴', '💪'],
-    'Emotions': ['😀', '😢', '😭', '😤', '😠', '😡', '🤬', '😱', '😨', '😰', '😥', '😓', '🤗', '🤔', '🤭', '🤫', '🤥', '😶', '😐', '😑', '😬', '🙄', '😯', '😦', '😧', '😮', '😲', '🥱', '😴', '🤤'],
-    'Gestures': ['👍', '👎', '👊', '✊', '🤛', '🤜', '🤞', '✌️', '🤟', '🤘', '👌', '🤌', '🤏', '👈', '👉', '👆', '👇', '☝️', '👋', '🤚', '🖐️', '✋', '🖖', '👏', '🙌', '👐', '🤲', '🤝', '🙏']
-};
-
 let attachedFiles = [];
 
-function openEmojiPicker() {
-    const emojiPicker = document.getElementById('emoji-picker');
-    const emojiGrid = document.getElementById('emoji-grid');
-    
-    // Populate emoji grid
-    emojiGrid.innerHTML = '';
-    Object.values(emojiCategories).flat().forEach(emoji => {
-        const emojiBtn = document.createElement('button');
-        emojiBtn.className = 'emoji-item';
-        emojiBtn.textContent = emoji;
-        emojiBtn.onclick = () => insertEmoji(emoji);
-        emojiGrid.appendChild(emojiBtn);
-    });
-    
-    emojiPicker.classList.remove('hidden');
-    
-    // Close on background click
-    emojiPicker.onclick = (e) => {
-        if (e.target === emojiPicker) {
-            closeEmojiPicker();
-        }
-    };
-}
-
-function closeEmojiPicker() {
-    const emojiPicker = document.getElementById('emoji-picker');
-    emojiPicker.classList.add('hidden');
-}
-
-function insertEmoji(emoji) {
-    const userInput = document.getElementById('user-input');
-    const start = userInput.selectionStart;
-    const end = userInput.selectionEnd;
-    const text = userInput.value;
-    
-    userInput.value = text.substring(0, start) + emoji + text.substring(end);
-    userInput.focus();
-    userInput.selectionStart = userInput.selectionEnd = start + emoji.length;
-    
-    // Trigger input event to update char count
-    userInput.dispatchEvent(new Event('input'));
-    
-    closeEmojiPicker();
-}
-
-// ==================== FORMATTING TOOLBAR ====================
-function toggleFormattingToolbar() {
-    const toolbar = document.getElementById('formatting-toolbar');
-    toolbar.classList.toggle('hidden');
-    toolbar.classList.toggle('show');
-}
-
-function insertFormatting(prefix, suffix, placeholder) {
-    const userInput = document.getElementById('user-input');
-    const start = userInput.selectionStart;
-    const end = userInput.selectionEnd;
-    const selectedText = userInput.value.substring(start, end);
-    const textToInsert = selectedText || placeholder;
-    
-    const formattedText = prefix + textToInsert + suffix;
-    userInput.value = userInput.value.substring(0, start) + formattedText + userInput.value.substring(end);
-    
-    userInput.focus();
-    
-    // Select the inserted text
-    if (selectedText) {
-        userInput.selectionStart = start;
-        userInput.selectionEnd = start + formattedText.length;
-    } else {
-        userInput.selectionStart = start + prefix.length;
-        userInput.selectionEnd = start + prefix.length + textToInsert.length;
-    }
-    
-    // Trigger input event to update char count
-    userInput.dispatchEvent(new Event('input'));
-}
-
-function clearInput() {
-    const userInput = document.getElementById('user-input');
-    userInput.value = '';
-    userInput.style.height = 'auto';
-    userInput.focus();
-}
-
-// ==================== FILE UPLOAD ====================
+// FILE UPLOAD
 function openFileDialog() {
     const input = document.createElement('input');
     input.type = 'file';
@@ -1030,7 +930,7 @@ function removeFile(fileName) {
     }
 }
 
-// ==================== SMART SUGGESTIONS ====================
+// SMART SUGGESTIONS
 const healthSuggestions = {
     'symptoms': ['What are the early symptoms?', 'How long do symptoms last?', 'When should I see a doctor?'],
     'treatment': ['What are the treatment options?', 'Are there natural remedies?', 'What medications are available?'],

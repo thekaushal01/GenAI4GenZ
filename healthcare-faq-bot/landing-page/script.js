@@ -121,5 +121,3 @@ document.querySelectorAll('button').forEach(button => {
         setTimeout(() => ripple.remove(), 600);
     });
 });
-
-console.log('🚀 Landing page loaded successfully!');
